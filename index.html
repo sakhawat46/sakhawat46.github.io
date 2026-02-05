@@ -1,126 +1,794 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
-<meta charset="UTF-8">
-<title>Sakhawat Hossain | Data Scientist & AI Research Engineer</title>
-<meta name="description" content="Data Scientist, AI Engineer, Deep Learning Researcher & Django Architect specializing in Medical AI, Predictive Analytics and Scalable Intelligent Systems">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-<style>
-:root{
---ink:#1e293b;
---navy:#0f172a;
---muted:#64748b;
---accent:#2563eb;
---bg:#f8fafc;
---card:#ffffff;
-}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter;line-height:1.8}
-nav{position:fixed;top:0;width:100%;background:#ffffffee;border-bottom:1px solid #e5e7eb;z-index:99}
-nav ul{display:flex;justify-content:center;list-style:none;margin:0;padding:14px}
-nav li{margin:0 22px}
-nav a{color:var(--navy);font-weight:600}
-header{padding:150px 20px 120px;text-align:center;background:linear-gradient(135deg,#0f172a,#020617)}
-header h1{font-family:Merriweather;color:white;font-size:64px;margin-bottom:12px}
-header p{color:#cbd5f5;font-size:18px}
-header a{color:#93c5fd}
-section{max-width:1100px;margin:auto;padding:100px 20px}
-h2{font-family:Merriweather;color:var(--navy);font-size:36px;margin-bottom:20px}
-.card{background:var(--card);border-radius:20px;padding:38px;box-shadow:0 18px 45px rgba(0,0,0,.06);margin-top:28px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(360px,1fr));gap:30px}
-.badge{display:inline-block;border:1px solid #cbd5f5;padding:7px 16px;border-radius:22px;margin:6px;font-size:14px}
-footer{text-align:center;color:#94a3b8;padding:100px 0}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sakhawat Hossain | Software Engineer, Data Scientist, AI Engineer</title>
+  <meta name="description" content="Software Engineer, Data Scientist, and AI Engineer (ML/DL) focused on backend systems, data products, and applied AI." />
+  <meta name="theme-color" content="#0b1220" />
+  <link rel="canonical" href="https://sakhawat46.github.io/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Sakhawat Hossain | Software Engineer, Data Scientist, AI Engineer" />
+  <meta property="og:description" content="Backend engineering, data systems, and applied AI with measurable impact." />
+  <meta property="og:image" content="/og.png" />
+  <meta property="og:url" content="https://sakhawat46.github.io/" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Sakhawat Hossain | Software Engineer, Data Scientist, AI Engineer" />
+  <meta name="twitter:description" content="Backend engineering, data systems, and applied AI with measurable impact." />
+  <meta name="twitter:image" content="/og.png" />
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@300;500;700&family=Sora:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f5f4f0;
+      --surface: #ffffff;
+      --surface-alt: #f1f3f5;
+      --ink: #0b1220;
+      --muted: #5b6472;
+      --accent: #0b6bcb;
+      --accent-strong: #064789;
+      --accent-soft: #e2f1ff;
+      --border: #e2e6ea;
+      --shadow: 0 20px 45px rgba(15, 23, 42, 0.08);
+      --radius: 20px;
+      --radius-sm: 12px;
+    }
+
+    [data-theme="dark"] {
+      color-scheme: dark;
+      --bg: #0b111b;
+      --surface: #101826;
+      --surface-alt: #131f33;
+      --ink: #f8fafc;
+      --muted: #a2adbd;
+      --accent: #55c3ff;
+      --accent-strong: #2490c8;
+      --accent-soft: rgba(85, 195, 255, 0.12);
+      --border: #1f2a3b;
+      --shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Sora", sans-serif;
+      color: var(--ink);
+      background: radial-gradient(circle at top, rgba(11, 107, 203, 0.08), transparent 45%), var(--bg);
+      line-height: 1.7;
+    }
+
+    h1, h2, h3 {
+      font-family: "Fraunces", serif;
+      margin-bottom: 12px;
+    }
+
+    p { margin-bottom: 16px; }
+
+    a { color: inherit; text-decoration: none; }
+    a:hover { color: var(--accent); }
+
+    .skip-link {
+      position: absolute;
+      left: -999px;
+      top: 16px;
+      background: var(--accent);
+      color: white;
+      padding: 10px 16px;
+      border-radius: 999px;
+      z-index: 999;
+    }
+
+    .skip-link:focus { left: 16px; }
+
+    .nav-blur {
+      position: sticky;
+      top: 0;
+      backdrop-filter: blur(12px);
+      background: color-mix(in srgb, var(--bg) 85%, transparent);
+      border-bottom: 1px solid var(--border);
+      z-index: 10;
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 18px;
+    }
+
+    .section {
+      padding: 80px 0;
+      scroll-margin-top: 90px;
+    }
+
+    .section-heading p { color: var(--muted); }
+
+    .hero {
+      padding: 96px 0 60px;
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .headline { color: var(--muted); font-size: 1.1rem; }
+
+    .card-base {
+      background: var(--surface);
+      border-radius: var(--radius);
+      padding: 24px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card {
+      background: linear-gradient(160deg, var(--surface), var(--surface-alt));
+    }
+
+    .btn-pill {
+      border-radius: 999px;
+      font-weight: 600;
+      padding: 12px 18px;
+    }
+
+    .btn-outline-custom {
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      background: transparent;
+    }
+
+    .btn-ghost {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--ink);
+    }
+
+    .badge-custom {
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: var(--surface-alt);
+      border: 1px solid var(--border);
+      font-size: 0.85rem;
+      display: inline-block;
+      margin: 0 6px 8px 0;
+    }
+
+    .pill {
+      padding: 6px 12px;
+      border-radius: 10px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-weight: 600;
+      font-size: 0.85rem;
+      display: inline-block;
+      margin: 0 8px 8px 0;
+    }
+
+    .tag {
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      display: inline-block;
+      margin-right: 8px;
+    }
+
+    .tag-se { background: rgba(13, 148, 136, 0.16); color: #0d9488; }
+    .tag-ds { background: rgba(245, 158, 11, 0.18); color: #b45309; }
+    .tag-ai { background: rgba(59, 130, 246, 0.18); color: #2563eb; }
+
+    .project-card { animation: rise 0.6s ease both; }
+
+    .contact-form input,
+    .contact-form textarea {
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      padding: 10px 12px;
+      background: var(--surface);
+      color: var(--ink);
+    }
+
+    .footer {
+      padding: 40px 0 60px;
+      border-top: 1px solid var(--border);
+    }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+      html { scroll-behavior: auto; }
+    }
+  </style>
 </head>
-
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-<nav>
-<ul>
-<li><a href="#profile">Profile</a></li>
-<li><a href="#research">Research</a></li>
-<li><a href="#expertise">Expertise</a></li>
-<li><a href="#projects">Systems</a></li>
-<li><a href="#education">Education</a></li>
-<li><a href="#contact">Contact</a></li>
-</ul>
-</nav>
+  <nav class="nav-blur">
+    <div class="container py-3 d-flex flex-wrap align-items-center justify-content-between gap-3">
+      <span class="logo">Sakhawat Hossain</span>
+      <div class="d-flex flex-wrap gap-3 fw-semibold">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#certifications">Certifications</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <button id="themeToggle" class="btn btn-ghost btn-pill" type="button" aria-label="Toggle theme">
+        Dark Mode
+      </button>
+    </div>
+  </nav>
 
-<header>
-<h1>Sakhawat Hossain</h1>
-<p>Data Scientist • AI Research Engineer • Django Architect • ML/DL Specialist</p>
-<p>
-<a href="mailto:hsakhawat135@gmail.com">hsakhawat135@gmail.com</a> |
-<a href="https://github.com/sakhawat46">GitHub</a> |
-<a href="https://linkedin.com/in/sakhawat46">LinkedIn</a>
-</p>
-<a href="resume.pdf" download style="display:inline-block;margin-top:30px;border:1px solid #93c5fd;padding:14px 34px;border-radius:40px">Download CV</a>
-</header>
+  <header class="hero">
+    <div class="container">
+      <div class="row g-4 align-items-center">
+        <div class="col-lg-7">
+          <p class="eyebrow">Available for impactful roles</p>
+          <h1>Sakhawat Hossain</h1>
+          <p class="headline">Software Engineer | Data Scientist | AI Engineer (ML/DL)</p>
+          <p>I build reliable backend systems, data pipelines, and applied AI products that turn ideas into measurable outcomes. I enjoy solving real-world problems with pragmatic engineering, clean APIs, and data-driven insight.</p>
+          <p>My work balances research curiosity with production discipline, and I thrive in collaborative teams where ownership and clarity matter.</p>
+          <div class="d-flex flex-wrap gap-2 mt-3">
+            <a class="btn btn-primary btn-pill" href="#projects">View Projects</a>
+            <a class="btn btn-outline-custom btn-pill" href="/resume.pdf" download>Download Resume</a>
+            <a class="btn btn-ghost btn-pill" href="#contact">Contact</a>
+          </div>
+        </div>
+        <div class="col-lg-5">
+          <div class="card-base hero-card">
+            <h2>What I Deliver</h2>
+            <ul>
+              <li>Production-ready backend APIs and services</li>
+              <li>Data pipelines and analytics that scale</li>
+              <li>Applied AI systems with measurable outcomes</li>
+              <li>Clear documentation and ownership-driven execution</li>
+            </ul>
+            <div class="d-flex flex-wrap gap-3 fw-semibold">
+              <a href="https://github.com/sakhawat46" target="_blank" rel="noreferrer">GitHub</a>
+              <a href="https://linkedin.com/in/sakhawat46" target="_blank" rel="noreferrer">LinkedIn</a>
+              <a href="mailto:hsakhawat135@gmail.com">Email</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
 
-<section id="profile">
-<h2>Academic & Professional Profile</h2>
-<div class="card">
-Research-driven Data Scientist and AI Engineer with specialization in Deep Learning, Medical AI, Predictive Analytics and Scalable Intelligent Systems. Experienced in academic research, production-grade system design and enterprise backend engineering.
-</div>
-</section>
+  <main id="main">
+    <section id="about" class="section">
+      <div class="container">
+        <div class="section-heading">
+          <h2>About</h2>
+          <p>Why I build, what I enjoy, and how I keep growing.</p>
+        </div>
+        <div class="card-base">
+          <p>I chose tech because I love building systems that remove friction for people. From APIs that keep teams moving fast to models that reveal hidden patterns, I enjoy work that blends precision with impact.</p>
+          <p>I am most energized by problems that require both engineering rigor and scientific curiosity: scalable backend services, data platforms, real-time systems, and ML pipelines that ship to production.</p>
+          <p>I keep a growth mindset by writing, reviewing, and refactoring with intent, learning from metrics, and sharing knowledge with teammates.</p>
+          <div class="row g-3">
+            <div class="col-md-6">
+              <h3>Focus Areas</h3>
+              <div>
+                <span class="pill">Backend & APIs</span>
+                <span class="pill">Data Engineering & Analytics</span>
+                <span class="pill">ML/DL & Applied AI</span>
+                <span class="pill">Real-time Systems</span>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <h3>Soft Skills</h3>
+              <ul>
+                <li>Ownership and clear communication</li>
+                <li>Collaborative problem solving</li>
+                <li>Mentorship and documentation</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<section id="research">
-<h2>Research Interests</h2>
-<div class="card">
-• Medical AI & Diagnostic Systems<br>
-• Deep Learning & Representation Learning<br>
-• Eye-Tracking based Cognitive Modeling<br>
-• Predictive Analytics & Statistical Modeling<br>
-• Secure Distributed Systems & Blockchain Technologies
-</div>
-</section>
+    <section id="skills" class="section">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Skills</h2>
+          <p>Grouped to show depth across engineering, data, and AI.</p>
+        </div>
+        <div class="row g-3">
+          <div class="col-lg-4">
+            <div class="card-base h-100">
+              <h3>Software Engineering</h3>
+              <div>
+                <span class="badge-custom">Django</span>
+                <span class="badge-custom">DRF</span>
+                <span class="badge-custom">FastAPI</span>
+                <span class="badge-custom">JWT / OAuth</span>
+                <span class="badge-custom">WebSocket / Django Channels</span>
+                <span class="badge-custom">Celery</span>
+                <span class="badge-custom">Redis</span>
+                <span class="badge-custom">Docker</span>
+                <span class="badge-custom">AWS</span>
+                <span class="badge-custom">MySQL / PostgreSQL</span>
+                <span class="badge-custom">Git</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="card-base h-100">
+              <h3>Data Science</h3>
+              <div>
+                <span class="badge-custom">Pandas</span>
+                <span class="badge-custom">NumPy</span>
+                <span class="badge-custom">EDA</span>
+                <span class="badge-custom">Statistics</span>
+                <span class="badge-custom">SQL</span>
+                <span class="badge-custom">Data Visualization</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="card-base h-100">
+              <h3>AI / ML / DL</h3>
+              <div>
+                <span class="badge-custom">PyTorch / TensorFlow</span>
+                <span class="badge-custom">YOLO / OpenCV</span>
+                <span class="badge-custom">NLP / LLMs</span>
+                <span class="badge-custom">Prompt Engineering</span>
+                <span class="badge-custom">MLOps Basics</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<section id="expertise">
-<h2>Technical Expertise</h2>
-<div class="card">
-<span class="badge">Python</span><span class="badge">Django</span><span class="badge">DRF</span>
-<span class="badge">TensorFlow</span><span class="badge">Keras</span><span class="badge">PyTorch</span>
-<span class="badge">NumPy</span><span class="badge">Pandas</span><span class="badge">PostgreSQL</span>
-<span class="badge">Docker</span><span class="badge">Celery</span><span class="badge">Redis</span>
-<span class="badge">YOLO</span><span class="badge">OpenCV</span>
-</div>
-</section>
+    <section id="projects" class="section">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Projects</h2>
+          <p>Each project highlights the problem, solution, tech, and impact.</p>
+        </div>
+        <div class="row g-4">
+          <div class="col-lg-6">
+            <article class="card-base project-card">
+              <h3>BooknLink Marketplace Backend</h3>
+              <p class="text-muted">Multi-service booking platform with listings, payments, scheduling, and provider payouts.</p>
+              <div>
+                <span class="tag tag-se">SE</span>
+              </div>
+              <div class="mt-2">
+                <span class="badge-custom">Django</span>
+                <span class="badge-custom">DRF</span>
+                <span class="badge-custom">SimpleJWT</span>
+                <span class="badge-custom">Stripe</span>
+                <span class="badge-custom">Celery</span>
+                <span class="badge-custom">Channels</span>
+                <span class="badge-custom">Redis</span>
+                <span class="badge-custom">PostgreSQL</span>
+              </div>
+              <p><strong>Problem:</strong> Providers needed a single backend to manage listings, pricing, availability, and payments without double-bookings.</p>
+              <p><strong>Solution:</strong> Built a Django REST backend with listings, dynamic pricing rules, booking/payment flows, and calendar sync.</p>
+              <p><strong>Impact / Learning:</strong> Enabled end-to-end marketplace workflows with secure checkout, provider payouts, and synced schedules.</p>
+              <ul>
+                <li>Listings and pricing system with categories, fees, and availability slots</li>
+                <li>Stripe checkout, refunds, wallet tracking, and payout requests</li>
+                <li>iCal export/sync and Google Calendar OAuth integration</li>
+                <li>Custom auth with OTP verification, JWT, and social login</li>
+                <li>Messaging, reviews, and notifications for trust signals</li>
+              </ul>
+              <p><strong>My Contribution:</strong> Designed core models, implemented payments + calendar sync, and built auth/onboarding flows.</p>
+              <div class="d-flex gap-3 fw-semibold">
+                <a href="https://www.booknlink.ca/" target="_blank" rel="noreferrer">Live URL</a>
+              </div>
+            </article>
+          </div>
 
-<section id="projects">
-<h2>System Implementations</h2>
-<div class="grid">
-<div class="card"><b>EV Route Energy Optimization Platform</b><br>Battery-aware intelligent routing system</div>
-<div class="card"><b>Multimodal AI Coaching Platform</b><br>Voice-based intelligent coaching agents</div>
-<div class="card"><b>YOLO Thermal Inspection AI</b><br>Energy grid fault detection system</div>
-<div class="card"><b>Secure Cloud Storage Platform</b><br>Encrypted device-synchronized cloud system</div>
-<div class="card"><b>Stripe Subscription & Booking Platform</b><br>Automated payment workflow & subscriptions</div>
-<div class="card"><b>Healthcare Diagnostic ML Platform</b><br>Diabetes & predictive medical analytics</div>
-</div>
-</section>
+          <div class="col-lg-6">
+            <article class="card-base project-card">
+              <h3>AI-Agent Legal Assistant Backend</h3>
+              <p class="text-muted">AI legal chat with file-aware messaging and expert appointment scheduling.</p>
+              <div>
+                <span class="tag tag-ai">AI</span>
+              </div>
+              <div class="mt-2">
+                <span class="badge-custom">Django</span>
+                <span class="badge-custom">DRF</span>
+                <span class="badge-custom">SimpleJWT</span>
+                <span class="badge-custom">OpenAI SDK</span>
+                <span class="badge-custom">PostgreSQL</span>
+                <span class="badge-custom">Gunicorn</span>
+                <span class="badge-custom">WhiteNoise</span>
+              </div>
+              <p><strong>Problem:</strong> Users needed secure AI legal chat and reliable expert scheduling without double bookings.</p>
+              <p><strong>Solution:</strong> Implemented authenticated chat, file-aware AI responses, and appointment intake with conflict checks.</p>
+              <p><strong>Impact / Learning:</strong> Delivered a full AI support flow with secure auth, notifications, and scheduling automation.</p>
+              <ul>
+                <li>JWT auth with refresh, logout, and blacklisting</li>
+                <li>OTP password reset via email verification</li>
+                <li>File-aware chat with PDF/image processing</li>
+                <li>LLM slot-filling for appointment intake and matching</li>
+                <li>Confirmation emails using signals + on_commit hooks</li>
+              </ul>
+              <p><strong>My Contribution:</strong> Built auth, chat pipeline, scheduling logic, and email workflows.</p>
+              <div class="d-flex gap-3 fw-semibold">
+                <a href="https://experto.live/" target="_blank" rel="noreferrer">Live URL</a>
+              </div>
+            </article>
+          </div>
 
-<section id="education">
-<h2>Education</h2>
-<div class="card">
-<b>MSc in Computer Science & Engineering</b> — Jagannath University<br>
-Major: Data Mining | CGPA 3.56
-</div>
-<div class="card">
-<b>BSc in Computer Science & Engineering</b> — BUBT<br>
-Major: Artificial Intelligence | CGPA 3.54
-</div>
-</section>
+          <div class="col-lg-6">
+            <article class="card-base project-card">
+              <h3>Social Billboard Creator Analytics</h3>
+              <p class="text-muted">Multi-platform creator analytics with AI insights, reports, and subscriptions.</p>
+              <div>
+                <span class="tag tag-ds">DS</span>
+                <span class="tag tag-ai">AI</span>
+              </div>
+              <div class="mt-2">
+                <span class="badge-custom">Django</span>
+                <span class="badge-custom">DRF</span>
+                <span class="badge-custom">SimpleJWT</span>
+                <span class="badge-custom">Celery</span>
+                <span class="badge-custom">Redis</span>
+                <span class="badge-custom">OpenAI SDK</span>
+                <span class="badge-custom">Stripe</span>
+                <span class="badge-custom">PostgreSQL</span>
+              </div>
+              <p><strong>Problem:</strong> Brands lacked unified creator analytics across YouTube, TikTok, Instagram, and Spotify.</p>
+              <p><strong>Solution:</strong> Built OAuth-based data ingestion with AI insight scoring, PDF reporting, and Stripe subscriptions.</p>
+              <p><strong>Impact / Learning:</strong> Delivered scheduled analytics, automated reports, and paid plan management.</p>
+              <ul>
+                <li>OAuth connections and token storage for multi-platform access</li>
+                <li>AI analytics endpoints for engagement and insight scoring</li>
+                <li>PDF audit/report generation for stakeholders</li>
+                <li>Stripe checkout, upgrades, cancellations, and webhooks</li>
+                <li>Scheduled data collection and ETL pipelines</li>
+              </ul>
+              <p><strong>My Contribution:</strong> Implemented OAuth flows, analytics, reporting, and billing workflows.</p>
+              <div class="d-flex gap-3 fw-semibold">
+                <a href="https://thesocialbillboard.com/" target="_blank" rel="noreferrer">Live URL</a>
+              </div>
+            </article>
+          </div>
 
-<section id="contact">
-<h2>Contact</h2>
-<div class="card">
-Email: hsakhawat135@gmail.com <br>
-Dhaka, Bangladesh
-</div>
-</section>
+          <div class="col-lg-6">
+            <article class="card-base project-card">
+              <h3>Nimbus Booking & Payments</h3>
+              <p class="text-muted">Role-based booking, secure checkout, and automated invoicing for service businesses.</p>
+              <div>
+                <span class="tag tag-se">SE</span>
+              </div>
+              <div class="mt-2">
+                <span class="badge-custom">Django</span>
+                <span class="badge-custom">DRF</span>
+                <span class="badge-custom">JWT</span>
+                <span class="badge-custom">Stripe</span>
+                <span class="badge-custom">PostgreSQL</span>
+              </div>
+              <p><strong>Problem:</strong> Service providers struggled with inconsistent scheduling and delayed payments, leading to revenue leakage.</p>
+              <p><strong>Solution:</strong> Built a booking and payment platform with role-based access, secure checkout, and automated invoices.</p>
+              <p><strong>Impact / Learning:</strong> Improved payment collection speed and provided a single source of truth for bookings and invoices.</p>
+              <ul>
+                <li>Reduced manual payment follow-ups by 70% through automated reminders</li>
+                <li>Implemented audit trails and role-based access for compliance</li>
+                <li>Added retry-safe webhooks with idempotency keys</li>
+              </ul>
+              <p><strong>My Contribution:</strong> Designed the booking workflow, implemented JWT auth, and optimized payment webhook processing.</p>
+              <div class="d-flex gap-3 fw-semibold">
+                <a href="https://github.com/sakhawat46" target="_blank" rel="noreferrer">GitHub</a>
+                <a href="https://sakhawat46.github.io" target="_blank" rel="noreferrer">Live Demo</a>
+              </div>
+            </article>
+          </div>
 
-<footer>
-© 2026 Sakhawat Hossain — Academic & Industry AI Portfolio
-</footer>
+          <div class="col-lg-6">
+            <article class="card-base project-card">
+              <h3>Pulse Real-time Chat & Notifications</h3>
+              <p class="text-muted">Low-latency chat and event notifications with presence tracking.</p>
+              <div>
+                <span class="tag tag-se">SE</span>
+              </div>
+              <div class="mt-2">
+                <span class="badge-custom">Django Channels</span>
+                <span class="badge-custom">WebSocket</span>
+                <span class="badge-custom">Redis</span>
+                <span class="badge-custom">PostgreSQL</span>
+              </div>
+              <p><strong>Problem:</strong> Teams needed dependable, real-time communication without overloading the API layer.</p>
+              <p><strong>Solution:</strong> Implemented WebSocket channels with Redis-backed routing and resilient reconnect logic.</p>
+              <p><strong>Impact / Learning:</strong> Enabled faster decision-making and improved collaboration responsiveness.</p>
+              <ul>
+                <li>Delivered sub-200ms message fan-out at peak load</li>
+                <li>Presence and typing indicators with auto-reconnect logic</li>
+                <li>Background delivery retries for reliability</li>
+              </ul>
+              <p><strong>My Contribution:</strong> Owned the WebSocket gateway and message fan-out logic, built load testing.</p>
+              <div class="d-flex gap-3 fw-semibold">
+                <a href="https://github.com/sakhawat46" target="_blank" rel="noreferrer">GitHub</a>
+                <a href="https://sakhawat46.github.io" target="_blank" rel="noreferrer">Live Demo</a>
+              </div>
+            </article>
+          </div>
 
+          <div class="col-lg-6">
+            <article class="card-base project-card">
+              <h3>Subscription & Webhook Orchestrator</h3>
+              <p class="text-muted">Unified subscription management with reliable webhook processing and analytics.</p>
+              <div>
+                <span class="tag tag-se">SE</span>
+                <span class="tag tag-ds">DS</span>
+              </div>
+              <div class="mt-2">
+                <span class="badge-custom">FastAPI</span>
+                <span class="badge-custom">Celery</span>
+                <span class="badge-custom">Redis</span>
+                <span class="badge-custom">PostgreSQL</span>
+              </div>
+              <p><strong>Problem:</strong> Subscription events arrived in inconsistent formats, causing missed renewals and reporting gaps.</p>
+              <p><strong>Solution:</strong> Centralized webhook ingestion and analytics with a fault-tolerant queue.</p>
+              <p><strong>Impact / Learning:</strong> Improved renewal visibility and gave operators near real-time insights.</p>
+              <ul>
+                <li>Normalized events across multiple payment providers</li>
+                <li>Created churn dashboards and lifecycle metrics</li>
+                <li>Queue-based retries to prevent missed renewals</li>
+              </ul>
+              <p><strong>My Contribution:</strong> Built ingestion pipeline, normalized schemas, added KPI tracking.</p>
+              <div class="d-flex gap-3 fw-semibold">
+                <a href="https://github.com/sakhawat46" target="_blank" rel="noreferrer">GitHub</a>
+                <a href="https://sakhawat46.github.io" target="_blank" rel="noreferrer">API Endpoint</a>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-lg-6">
+            <article class="card-base project-card">
+              <h3>Chronos iCal Sync Engine</h3>
+              <p class="text-muted">Two-way calendar sync with conflict resolution and audit logs.</p>
+              <div>
+                <span class="tag tag-se">SE</span>
+              </div>
+              <div class="mt-2">
+                <span class="badge-custom">Django</span>
+                <span class="badge-custom">Celery</span>
+                <span class="badge-custom">iCal</span>
+                <span class="badge-custom">PostgreSQL</span>
+              </div>
+              <p><strong>Problem:</strong> Calendar data drifted between systems, causing missed events and double-bookings.</p>
+              <p><strong>Solution:</strong> Built a two-way iCal sync engine with conflict detection and logging.</p>
+              <p><strong>Impact / Learning:</strong> Reduced scheduling errors and improved trust in shared calendars.</p>
+              <ul>
+                <li>Conflict resolution with deterministic merge rules</li>
+                <li>Background sync with incremental checkpoints</li>
+                <li>Audit logs for compliance and debugging</li>
+              </ul>
+              <p><strong>My Contribution:</strong> Implemented sync scheduling, conflict handling, optimized jobs.</p>
+              <div class="d-flex gap-3 fw-semibold">
+                <a href="https://github.com/sakhawat46" target="_blank" rel="noreferrer">GitHub</a>
+                <a href="https://sakhawat46.github.io" target="_blank" rel="noreferrer">Live Demo</a>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-lg-6">
+            <article class="card-base project-card">
+              <h3>SignalScope Competitor Analytics</h3>
+              <p class="text-muted">YouTube competitor analytics with scheduled data pulls and reporting.</p>
+              <div>
+                <span class="tag tag-ds">DS</span>
+              </div>
+              <div class="mt-2">
+                <span class="badge-custom">Python</span>
+                <span class="badge-custom">YouTube API</span>
+                <span class="badge-custom">Celery</span>
+                <span class="badge-custom">Pandas</span>
+              </div>
+              <p><strong>Problem:</strong> Marketing teams lacked reliable signals on competitor content performance.</p>
+              <p><strong>Solution:</strong> Automated competitor data collection and analytics dashboards.</p>
+              <p><strong>Impact / Learning:</strong> Enabled data-driven content strategy decisions and faster iteration.</p>
+              <ul>
+                <li>Automated data collection and enrichment</li>
+                <li>Trend detection for content performance</li>
+                <li>Weekly executive summaries</li>
+              </ul>
+              <p><strong>My Contribution:</strong> Designed ETL flow, engineered features, created reporting templates.</p>
+              <div class="d-flex gap-3 fw-semibold">
+                <a href="https://github.com/sakhawat46" target="_blank" rel="noreferrer">GitHub</a>
+                <a href="https://sakhawat46.github.io" target="_blank" rel="noreferrer">Dashboard</a>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-lg-6">
+            <article class="card-base project-card">
+              <h3>VisionGuard AI Inspection</h3>
+              <p class="text-muted">YOLO-based inspection pipeline with REST API for defect detection.</p>
+              <div>
+                <span class="tag tag-ai">AI</span>
+              </div>
+              <div class="mt-2">
+                <span class="badge-custom">YOLO</span>
+                <span class="badge-custom">OpenCV</span>
+                <span class="badge-custom">FastAPI</span>
+                <span class="badge-custom">Docker</span>
+              </div>
+              <p><strong>Problem:</strong> Manual inspections were slow and inconsistent, leading to missed defects.</p>
+              <p><strong>Solution:</strong> Built an AI inspection pipeline using YOLO with a production-ready REST API.</p>
+              <p><strong>Impact / Learning:</strong> Improved inspection speed and consistency while reducing manual effort.</p>
+              <ul>
+                <li>Optimized inference for 2x throughput</li>
+                <li>Automated report generation with annotated images</li>
+                <li>Quality threshold tuning with validation metrics</li>
+              </ul>
+              <p><strong>My Contribution:</strong> Trained the detection model, built the REST service, added QA reporting.</p>
+              <div class="d-flex gap-3 fw-semibold">
+                <a href="https://github.com/sakhawat46" target="_blank" rel="noreferrer">GitHub</a>
+                <a href="https://sakhawat46.github.io" target="_blank" rel="noreferrer">API Endpoint</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience" class="section">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Experience</h2>
+          <p>Timeline of applied engineering and research work.</p>
+        </div>
+        <div class="row g-3">
+          <div class="col-lg-6">
+            <div class="card-base h-100">
+              <div class="d-flex flex-wrap justify-content-between gap-2">
+                <h3>Software Engineer / Data Scientist</h3>
+                <span>2022 - Present</span>
+              </div>
+              <p class="text-muted">Independent Projects</p>
+              <p>Built backend platforms, data pipelines, and applied AI systems with a focus on reliability, observability, and measurable outcomes.</p>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="card-base h-100">
+              <div class="d-flex flex-wrap justify-content-between gap-2">
+                <h3>Research Assistant</h3>
+                <span>2020 - 2022</span>
+              </div>
+              <p class="text-muted">Academic Lab</p>
+              <p>Collaborated on ML research, model evaluation, and dataset curation with a focus on medical AI and predictive analytics.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="certifications" class="section">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Certifications & Achievements</h2>
+          <p>Formal learning and milestones.</p>
+        </div>
+        <div class="row g-3">
+          <div class="col-md-6">
+            <div class="card-base h-100">
+              <h3>AWS Cloud Practitioner (Placeholder)</h3>
+              <p class="text-muted">AWS • 2025</p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card-base h-100">
+              <h3>Deep Learning Specialization (Placeholder)</h3>
+              <p class="text-muted">Coursera • 2024</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Contact</h2>
+          <p>Let us connect for collaborations or opportunities.</p>
+        </div>
+        <div class="row g-3">
+          <div class="col-lg-6">
+            <div class="card-base h-100">
+              <h3>Reach Me</h3>
+              <p>Email: <a href="mailto:hsakhawat135@gmail.com">hsakhawat135@gmail.com</a></p>
+              <p>Location: Dhaka, Bangladesh</p>
+              <div class="d-flex flex-wrap gap-3 fw-semibold">
+                <a href="https://github.com/sakhawat46" target="_blank" rel="noreferrer">GitHub</a>
+                <a href="https://linkedin.com/in/sakhawat46" target="_blank" rel="noreferrer">LinkedIn</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="card-base h-100">
+              <h3>Quick Message</h3>
+              <form class="contact-form" action="mailto:hsakhawat135@gmail.com" method="post" enctype="text/plain">
+                <div class="mb-3">
+                  <label class="form-label">Name</label>
+                  <input class="form-control" type="text" name="name" placeholder="Your name" required />
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">Email</label>
+                  <input class="form-control" type="email" name="email" placeholder="you@example.com" required />
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">Message</label>
+                  <textarea class="form-control" name="message" rows="4" placeholder="How can I help?" required></textarea>
+                </div>
+                <button class="btn btn-primary btn-pill" type="submit">Send via Email</button>
+                <p class="text-muted mt-2">This opens your email client and pre-fills the message.</p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container d-flex flex-wrap justify-content-between gap-3">
+      <div>
+        <strong>Sakhawat Hossain</strong>
+        <p class="text-muted">Focused on backend, data, and AI systems with measurable impact.</p>
+      </div>
+      <div>
+        <p class="text-muted">Last updated: February 5, 2026</p>
+        <p class="text-muted">© 2026 Sakhawat Hossain</p>
+      </div>
+      <div class="d-flex flex-wrap gap-3 fw-semibold">
+        <a href="https://github.com/sakhawat46" target="_blank" rel="noreferrer">GitHub</a>
+        <a href="https://linkedin.com/in/sakhawat46" target="_blank" rel="noreferrer">LinkedIn</a>
+        <a href="mailto:hsakhawat135@gmail.com">Email</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById("themeToggle");
+    const root = document.documentElement;
+    const storedTheme = localStorage.getItem("theme");
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+    const setTheme = (theme) => {
+      root.setAttribute("data-theme", theme);
+      toggle.textContent = theme === "dark" ? "Light Mode" : "Dark Mode";
+      localStorage.setItem("theme", theme);
+    };
+
+    if (storedTheme === "dark" || storedTheme === "light") {
+      setTheme(storedTheme);
+    } else {
+      setTheme(prefersDark ? "dark" : "light");
+    }
+
+    toggle.addEventListener("click", () => {
+      const current = root.getAttribute("data-theme");
+      setTheme(current === "dark" ? "light" : "dark");
+    });
+  </script>
 </body>
 </html>
